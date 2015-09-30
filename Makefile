@@ -1,5 +1,5 @@
 #!/usr/bin/make
-# Module:  Makefile
+# Module:   Makefile
 # Purpose:  build the GLIB examples
 # Author:   Wade Hampton
 # Date:     9/25/2015
@@ -14,7 +14,7 @@ GLIB_INCLUDE = $(shell pkg-config --cflags glib-2.0)
 # define the compiler
 CC=gcc
 
-# define the libs
+# define the libs, include lm for completeness
 LIBS=$(GLIB_LIB) -lm 
 
 # define the build flags, turn on all warnings and setup for GDB
@@ -22,8 +22,8 @@ DEBUG_FLAGS=-ggdb -Wall
 INCLUDE=-I . $(GLIB_INCLUDE)
 CFLAGS=$(DEBUG_FLAGS) $(INCLUDE)
 
-# binaries
-BINS=glib_test1 glib_atomic glib_hash
+# define binaries so we have a list for build rules and cleanup
+BINS=glib_test1 glib_atomic glib_hash 
 
 # build test programs
 all: $(BINS)
