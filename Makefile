@@ -23,11 +23,16 @@ INCLUDE=-I . $(GLIB_INCLUDE)
 CFLAGS=$(DEBUG_FLAGS) $(INCLUDE)
 
 # binaries
-BINS=glib_test1
+BINS=glib_test1 glib_atomic
 
 # build test programs
+all: $(BINS)
+
 glib_test1:  glib_test1.c
 	$(CC) $(CFLAGS) -o glib_test1 glib_test1.c $(LIBS)
+
+glib_atomic:  glib_atomic.c
+	$(CC) $(CFLAGS) -o glib_atomic glib_atomic.c $(LIBS)
 
 # cleanup:
 clean::
