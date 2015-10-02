@@ -28,14 +28,9 @@ BINS=glib_test1 glib_atomic glib_hash
 # build test programs
 all: $(BINS)
 
-glib_test1:  glib_test1.c
-	$(CC) $(CFLAGS) -o glib_test1 glib_test1.c $(LIBS)
-
-glib_atomic:  glib_atomic.c
-	$(CC) $(CFLAGS) -o glib_atomic glib_atomic.c $(LIBS)
-
-glib_hash:  glib_hash.c
-	$(CC) $(CFLAGS) -o glib_hash glib_hash.c $(LIBS)
+# simple build rule for examples, source is same name + ".c"
+%: %.c
+	$(CC) $(CFLAGS) -o $@ $<  $(LIBS)	
 
 # cleanup:
 clean::
