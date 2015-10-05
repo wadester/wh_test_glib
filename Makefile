@@ -23,7 +23,7 @@ INCLUDE=-I . $(GLIB_INCLUDE)
 CFLAGS=$(DEBUG_FLAGS) $(INCLUDE)
 
 # define binaries so we have a list for build rules and cleanup
-BINS=glib_test1 glib_atomic glib_hash glib_main_loop1
+BINS=glib_test1 glib_atomic glib_hash glib_main_loop1 glib_main_loop2
 
 # build test programs
 all: $(BINS)

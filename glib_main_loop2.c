@@ -1,13 +1,11 @@
 /* 
- * Module:   glib_main_loop1.c
- * Purpose:  to test the main loop code (short version)
+ * Module:   glib_main_loop2.c
+ * Purpose:  to test the main loop code (long version)
  * Author:   Wade Hampton
- * Date:     10/2/2015
+ * Date:     10/5/2015
  * Notes:
  * 1)  This uses 
- * 2)  Ref:  my detailed test code from 2006
- *       https://developer.gnome.org/glib/2.46/glib-The-Main-Event-Loop.html
- *       http://ctaste.blog.com/2010/09/20/gmainloop-example/
+ * 2)  Ref:  TBD
  *     
  */
 #define TSIZE 30
@@ -38,7 +36,6 @@ void tmsg(char* msg) {
     g_free(tbuf);
 }
 
-
 /************************************************************************/
 /** timeout callback, see doc on g_timeout_add() 
  *  -- called until this returns FALSE when it will be removed */
@@ -49,7 +46,7 @@ gboolean tmo_callback(gpointer data) {
 }
 
 /************************************************************************/
-/* program main  */
+/* program main */
 int main()
 {
     tmsg("Starting");
