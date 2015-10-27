@@ -16,6 +16,8 @@ History:
 
 1) 0.1   9/29/2015    created
 
+2) 0.2	 10/27/2015   updated, links added
+
 Notes:
 ======
 
@@ -23,11 +25,11 @@ Notes:
     this format for MANY years (I may upload a tool or migrate to asciidoc).
 
 2)  This project is mainly to experiment with github and with GLIB.  It is
-    losely based on my wh_test_py github repository.
+    loosely based on my wh_test_py github repository.
 
 3)  License for ALL files is GPL, see LICENSE.
 
-4)  Please e-mail me with any updates, suggesions, etc.
+4)  Please e-mail me with any updates, suggestions, etc.
 
 5)  Programs include TBD.
 
@@ -38,10 +40,10 @@ Why GLIB:
 =========
 
 I first found glib circa 2005 when I was writing some software to 
-support inter-thread communications.  I had my code nearly-completely 
-written when I found the IBM tutorial on GLIB at this page:
-
-  http://www.ibm.com/developerworks/linux/tutorials/l-glib/
+support inter-thread communications in some new C/C++ software.  
+For many years I had simply used pipes and sockets on Xenix, SCO Unix,
+Solaris, Linux, etc., but I needed a new library.  I had my code 
+nearly completely written when I found the IBM tutorial on GLIB.
 
 I kept only the top layers of my software and implemented the low-level
 features with glib.  It has worked very well with some of my glib-based
@@ -50,3 +52,14 @@ daemons running for well over a year without issue.
 Prior to my use of glib, I had my own software, largely-based on 
 UNIX's pipes and select.  Note this ran on Xenix, SCO Unix, Solaris,
 and eventually Linux.
+
+Links:
+======
+
+1)  Official API documentation:
+
+    https://developer.gnome.org/glib
+
+2)  IBM tutorial on GLIB:  
+
+    http://www.ibm.com/developerworks/linux/tutorials/l-glib/
