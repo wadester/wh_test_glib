@@ -1,0 +1,6 @@
+glib_async_queue
+glib_atomic
+glib_hash
+glib_main_loop1
+glib_main_loop2
+glib_test1

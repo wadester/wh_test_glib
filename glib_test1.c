@@ -9,7 +9,8 @@
  * 3)  Reference:
  *       https://developer.gnome.org/glib/2.46/glib-Threads.html
  *       https://computing.llnl.gov/tutorials/pthreads/
- *     
+ * 4)  The GLIB_CHECK_VERSION macro may be used to support 
+ *     the deprecated thread API (prior to version 2.32.0).
  */
 
 #include <stdio.h>
@@ -49,14 +50,24 @@ void Init() {
     //	  g_thread_init(NULL);
     //  }
 
+#if !GLIB_CHECK_VERSION(2,32,0)
+    if (!g_thread_supported()) {
+	g_thread_init(NULL);
+    }
+#endif
+
     // g_thread_create has been deprecated since version 2.32 
     // and should not be used in newly-written code.
     // Use g_thread_new() instead
     // Any of the following work:
     //   th = g_thread_create(p_thread, NULL, 1, NULL);
     //   th = g_thread_create(my_thread, NULL, 1, NULL);
-    th = g_thread_new("My Thread", my_thread, NULL);
 
+#if GLIB_CHECK_VERSION(2,32,0)
+    th = g_thread_new("My Thread", my_thread, NULL);
+#else
+    th = g_thread_create(my_thread, NULL, 1, NULL);
+#endif
 }
 
 // cleanup at the end

@@ -3,10 +3,10 @@
 # Purpose:  build the GLIB examples
 # Author:   Wade Hampton
 # Date:     9/25/2015
-#
-
-# defines for GLIB, use pkg-config to get from the O/S
-# should work with Fedora/CentOS/RHEL/Ubuntu
+# 1)  This builds the examples.  Type make clean to cleanup.
+# 2)  The pkg-config tools defines GLIB build options.  
+#     Use pkg-config to get definitions from the O/S.
+# 3)  These packages should work with Fedora/CentOS/RHEL/Ubuntu.
 #
 GLIB_LIB     = $(shell pkg-config --libs gthread-2.0)
 GLIB_INCLUDE = $(shell pkg-config --cflags glib-2.0)
